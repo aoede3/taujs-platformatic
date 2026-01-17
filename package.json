@@ -1,0 +1,25 @@
+{
+  "name": "taujs-platformatic",
+  "scripts": {
+    "dev": "wattpm dev",
+    "build": "platformatic compile",
+    "start": "wattpm start",
+    "clean": "rm -fr ./dist"
+  },
+  "devDependencies": {
+    "fastify": "^5.0.0",
+    "borp": "^0.20.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@platformatic/runtime": "^2.75.2",
+    "platformatic": "^2.75.2",
+    "wattpm": "^2.75.2"
+  },
+  "engines": {
+    "node": ">=20.16.0 || >=22.3.0"
+  },
+  "workspaces": [
+    "taujs"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.75.2.json",
+  "application": {
+    "basePath": "/",
+    "commands": {
+      "build": "tsc -p tsconfig.json"
+    }
+  },
+  "node": {
+    "main": "dist/platformatic-entry.js"
+  }
+}

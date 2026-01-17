@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/runtime/2.75.2.json",
+  "entrypoint": "taujs",
+  "services": [
+    {
+      "id": "taujs",
+      "path": "./web/taujs",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
