@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.75.2.json",
+  "$schema": "https://schemas.platformatic.dev/@platformatic/node/3.29.1.json",
   "application": {
     "basePath": "/",
     "commands": {

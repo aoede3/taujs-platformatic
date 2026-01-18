@@ -7,19 +7,19 @@
     "clean": "rm -fr ./dist"
   },
   "devDependencies": {
-    "fastify": "^5.0.0",
     "borp": "^0.20.0",
+    "fastify": "^5.0.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@platformatic/runtime": "^2.75.2",
-    "platformatic": "^2.75.2",
-    "wattpm": "^2.75.2"
+    "@platformatic/runtime": "^3.29.1",
+    "platformatic": "^3.29.1",
+    "wattpm": "^3.29.1"
   },
   "engines": {
     "node": ">=20.16.0 || >=22.3.0"
   },
   "workspaces": [
-    "taujs"
+    "web/taujs"
   ]
 }

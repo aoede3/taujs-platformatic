@@ -11,8 +11,11 @@ const { app, net } = await createServer({
 });
 
 if (app) {
+  const port = Number(process.env.PORT ?? net.port);
+  const host = process.env.HOST ?? net.host;
+
   await app.listen({
-    host: net.host,
-    port: net.port,
+    host,
+    port,
   });
 }

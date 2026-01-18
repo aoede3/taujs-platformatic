@@ -14,7 +14,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@platformatic/node": "^2.75.2",
+    "@platformatic/node": "^3.29.1",
     "@taujs/react": "latest",
     "@taujs/server": "latest",
     "fastify": "^5.6.1",
