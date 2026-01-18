@@ -6,6 +6,13 @@
       "build": "tsc -p tsconfig.json"
     }
   },
+  "watch": {
+    "enabled": true,
+    "ignore": [
+      "src/client/**",
+      "dist/**"
+    ]
+  },
   "node": {
     "main": "dist/platformatic-entry.js"
   }

@@ -1,7 +1,9 @@
 {
   "name": "taujs-platformatic",
   "scripts": {
-    "dev": "wattpm dev",
+    "dev": "cd web/taujs && npm run dev",
+    "dev:watt": "wattpm dev -c watt.dev.json",
+    "dev:full": "wattpm dev -c watt.dev.json & (cd web/taujs && npm run dev)",
     "build": "platformatic compile",
     "start": "wattpm start",
     "clean": "rm -fr ./dist"
