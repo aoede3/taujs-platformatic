@@ -1,5 +1,10 @@
 {
-  "$schema": "https://schemas.platformatic.dev/@platformatic/runtime/2.75.2.json",
+  "$schema": "https://schemas.platformatic.dev/@platformatic/runtime/3.29.1.json",
+  "watch": true,
+  "server": {
+    "hostname": "127.0.0.1",
+    "port": 5173
+  },
   "entrypoint": "taujs",
   "services": [
     {

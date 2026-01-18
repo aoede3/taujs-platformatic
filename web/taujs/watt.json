@@ -1,10 +1,17 @@
 {
-  "$schema": "https://schemas.platformatic.dev/@platformatic/node/2.75.2.json",
+  "$schema": "https://schemas.platformatic.dev/@platformatic/node/3.29.1.json",
   "application": {
     "basePath": "/",
     "commands": {
       "build": "tsc -p tsconfig.json"
     }
+  },
+  "watch": {
+    "enabled": true,
+    "ignore": [
+      "src/client/**",
+      "dist/**"
+    ]
   },
   "node": {
     "main": "dist/platformatic-entry.js"

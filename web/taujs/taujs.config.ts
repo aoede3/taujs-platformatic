@@ -1,10 +1,14 @@
 import { defineConfig } from '@taujs/server/config';
 
+const port = Number(process.env.PORT ?? 5173);
+const hmrPort = Number(process.env.HMR_PORT ?? 5174);
+const host = process.env.HOST ?? 'localhost';
+
 export default defineConfig({
   server: {
-    port: 5173,
-    host: 'localhost',
-    hmrPort: 5174,
+    port,
+    host,
+    hmrPort,
   },
   apps: [
     {

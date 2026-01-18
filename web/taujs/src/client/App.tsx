@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import { useSSRStore } from '@taujs/react';
+import { Suspense } from "react";
+import { useSSRStore } from "@taujs/react";
 
 import "./styles.css";
 
@@ -27,7 +27,8 @@ export function App() {
       <header className="app-header">
         <h1 className="app-title">τjs - Composing systems, not just apps</h1>
         <p className="app-subtitle">
-          Request-first application composition with explicit per-route rendering control.
+          Request-first application composition with explicit per-route
+          rendering control.
         </p>
       </header>
 
@@ -45,27 +46,41 @@ export function App() {
       <section className="section">
         <h2 className="section-title">Quick start</h2>
         <ul className="list">
-          <li>Edit <code>src/client/App.tsx</code> to change this page.</li>
-          <li>Adjust styles in <code>src/client/styles.css</code>.</li>
-          <li>Configure routes in <code>taujs.config.ts</code>.</li>
+          <li>
+            Edit <code>src/client/App.tsx</code> to change this page.
+          </li>
+          <li>
+            Adjust styles in <code>src/client/styles.css</code>.
+          </li>
+          <li>
+            Configure routes in <code>taujs.config.ts</code>.
+          </li>
           <li>
             Visit <a href="/">/</a> for standard SSR and{" "}
             <a href="/streaming">/streaming</a> for streaming SSR.
           </li>
-          <li>Further information can be found at <a href="http://taujs.dev" target="_blank">τjs Documentation and Guides</a>.</li>
+          <li>
+            Further information can be found at{" "}
+            <a href="http://taujs.dev" target="_blank">
+              τjs Documentation and Guides
+            </a>
+            .
+          </li>
         </ul>
       </section>
 
       <section className="tip">
         <p>
-          <strong>SSR:</strong> The <code>/</code> route resolves all data on the server
-          before sending HTML. You get a complete, fully rendered document on first byte,
-          which is ideal for predictable latency and caching.
+          <strong>SSR:</strong> The <code>/</code> route resolves all data on
+          the server before sending HTML. You get a complete, fully rendered
+          document on first byte, which is ideal for predictable latency and
+          caching.
         </p>
         <p>
-          <strong>STREAM:</strong> The <code>/streaming</code> route uses a service descriptor
-          and returns a Promise. The <code>&lt;Suspense&gt;</code> boundary above shows
-          a fallback while the server resolves it, then progressively streams the final content.
+          <strong>STREAM:</strong> The <code>/streaming</code> route uses a
+          service descriptor and returns a Promise. The{" "}
+          <code>&lt;Suspense&gt;</code> boundary above shows a fallback while
+          the server resolves it, then progressively streams the final content.
         </p>
       </section>
 
