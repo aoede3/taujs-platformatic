@@ -2,13 +2,16 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": false,
-    "noEmit": false,
-    "outDir": "dist",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,12 +19,15 @@
     "skipLibCheck": true,
     "types": [],
     "paths": {
-      "@client/*": ["./src/client/*"],
-      "@server/*": ["./src/server/*"]
+      "@client/*": [
+        "./src/client/*"
+      ],
+      "@server/*": [
+        "./src/server/*"
+      ]
     }
   },
   "include": [
-    "platformatic-entry.ts",
     "src/client/**/*",
     "src/server/**/*",
     "taujs.config.ts"

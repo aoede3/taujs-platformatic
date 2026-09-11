@@ -1,27 +1,18 @@
 {
   "name": "taujs-platformatic",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": ["apps/*"],
   "scripts": {
-    "dev": "cd web/taujs && npm run dev",
-    "dev:watt": "wattpm dev -c watt.dev.json",
-    "dev:full": "wattpm dev -c watt.dev.json & (cd web/taujs && npm run dev)",
-    "build": "platformatic compile",
-    "start": "wattpm start",
-    "clean": "rm -fr ./dist"
-  },
-  "devDependencies": {
-    "borp": "^0.20.0",
-    "fastify": "^5.0.0",
-    "typescript": "^5.5.4"
-  },
-  "dependencies": {
-    "@platformatic/runtime": "^3.29.1",
-    "platformatic": "^3.29.1",
-    "wattpm": "^3.29.1"
+    "dev": "wattpm dev",
+    "build": "wattpm build",
+    "start": "wattpm start -c watt.prod.json"
   },
   "engines": {
-    "node": ">=20.16.0 || >=22.3.0"
+    "node": "^20.19.0 || >=22.12.0"
   },
-  "workspaces": [
-    "web/taujs"
-  ]
+  "devDependencies": {
+    "wattpm": "3.69.0"
+  }
 }

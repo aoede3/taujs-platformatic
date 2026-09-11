@@ -1,7 +1,11 @@
 import { createRenderer } from '@taujs/react';
 import { App } from './App';
 
-export const { renderSSR, renderStream } = createRenderer({
+import type { AppData, AppRouteContext } from './app-types';
+
+// Generics derived from taujs.config.ts: typed data for headContent and the store, typed
+// routeContext for appComponent.
+export const { renderSSR, renderStream } = createRenderer<AppData, AppRouteContext>({
   appComponent: () => <App />,
   headContent: ({ data, meta }) => `
     <title>${meta?.title || "τjs - Composing systems, not just apps"}</title>

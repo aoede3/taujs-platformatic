@@ -1,15 +1,13 @@
-import { Suspense } from "react";
-import { useSSRStore } from "@taujs/react";
+import { Suspense } from 'react';
+import { useSSRStore } from '@taujs/react';
 
 import "./styles.css";
 
-type GreetingData = {
-  message: string;
-  timestamp: string;
-};
+import type { AppData } from './app-types';
 
 function GreetingCard() {
-  const data = useSSRStore<GreetingData>();
+  // AppData is derived from taujs.config.ts - greet()'s result, never hand-written.
+  const data = useSSRStore<AppData>();
 
   return (
     <section className="card card--primary">
@@ -21,14 +19,17 @@ function GreetingCard() {
   );
 }
 
+// Served under a public prefix: Vite's base is τjs's publicBasePath, so links derive from it
+// rather than assuming the application is mounted at the root.
+const base = import.meta.env.BASE_URL;
+
 export function App() {
   return (
     <div className="app">
       <header className="app-header">
         <h1 className="app-title">τjs - Composing systems, not just apps</h1>
         <p className="app-subtitle">
-          Request-first application composition with explicit per-route
-          rendering control.
+          Request-first application composition with explicit per-route rendering control.
         </p>
       </header>
 
@@ -46,41 +47,27 @@ export function App() {
       <section className="section">
         <h2 className="section-title">Quick start</h2>
         <ul className="list">
+          <li>Edit <code>src/client/App.tsx</code> to change this page.</li>
+          <li>Adjust styles in <code>src/client/styles.css</code>.</li>
+          <li>Configure routes in <code>taujs.config.ts</code>.</li>
           <li>
-            Edit <code>src/client/App.tsx</code> to change this page.
+            Visit <a href={base}>/</a> for standard SSR and{" "}
+            <a href={`${base}streaming`}>/streaming</a> for streaming SSR.
           </li>
-          <li>
-            Adjust styles in <code>src/client/styles.css</code>.
-          </li>
-          <li>
-            Configure routes in <code>taujs.config.ts</code>.
-          </li>
-          <li>
-            Visit <a href="/">/</a> for standard SSR and{" "}
-            <a href="/streaming">/streaming</a> for streaming SSR.
-          </li>
-          <li>
-            Further information can be found at{" "}
-            <a href="http://taujs.dev" target="_blank">
-              τjs Documentation and Guides
-            </a>
-            .
-          </li>
+          <li>Further information can be found at <a href="http://taujs.dev" target="_blank">τjs Documentation and Guides</a>.</li>
         </ul>
       </section>
 
       <section className="tip">
         <p>
-          <strong>SSR:</strong> The <code>/</code> route resolves all data on
-          the server before sending HTML. You get a complete, fully rendered
-          document on first byte, which is ideal for predictable latency and
-          caching.
+          <strong>SSR:</strong> The <code>/</code> route resolves all data on the server
+          before sending HTML. You get a complete, fully rendered document on first byte,
+          which is ideal for predictable latency and caching.
         </p>
         <p>
-          <strong>STREAM:</strong> The <code>/streaming</code> route uses a
-          service descriptor and returns a Promise. The{" "}
-          <code>&lt;Suspense&gt;</code> boundary above shows a fallback while
-          the server resolves it, then progressively streams the final content.
+          <strong>STREAM:</strong> The <code>/streaming</code> route declares the same typed
+          service edge with streaming rendering. The <code>&lt;Suspense&gt;</code> boundary above
+          shows a fallback while the server resolves it, then progressively streams the final content.
         </p>
       </section>
 

@@ -1,2 +1,5 @@
-node_modules
-web/taujs/dist
+node_modules/
+dist/
+.vite/
+out/
+*.log

@@ -1,8 +1,0 @@
-{
-  "$schema": "https://schemas.platformatic.dev/@platformatic/runtime/3.29.1.json",
-  "server": {
-    "hostname": "127.0.0.1",
-    "port": 5173
-  },
-  "services": []
-}
