@@ -19,6 +19,10 @@ function GreetingCard() {
   );
 }
 
+// Served under a public prefix: Vite's base is τjs's publicBasePath, so links derive from it
+// rather than assuming the application is mounted at the root.
+const base = import.meta.env.BASE_URL;
+
 export function App() {
   return (
     <div className="app">
@@ -47,8 +51,8 @@ export function App() {
           <li>Adjust styles in <code>src/client/styles.css</code>.</li>
           <li>Configure routes in <code>taujs.config.ts</code>.</li>
           <li>
-            Visit <a href="/">/</a> for standard SSR and{" "}
-            <a href="/streaming">/streaming</a> for streaming SSR.
+            Visit <a href={base}>/</a> for standard SSR and{" "}
+            <a href={`${base}streaming`}>/streaming</a> for streaming SSR.
           </li>
           <li>Further information can be found at <a href="http://taujs.dev" target="_blank">τjs Documentation and Guides</a>.</li>
         </ul>
