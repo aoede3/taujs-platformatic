@@ -1,0 +1,38 @@
+{
+  "name": "web-a",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development tsx watch --ignore vite.config.ts --trace-warnings --tsconfig ./src/server/tsconfig.json ./src/server/index.ts --loglevel verbose",
+    "build:client": "cross-env NODE_ENV=production tsx build.ts",
+    "build:entry-server": "cross-env NODE_ENV=production BUILD_MODE=ssr tsx build.ts",
+    "build:server": "esbuild src/server/index.ts --bundle --platform=node --format=esm --outfile=dist/server/index.js --external:fastify --external:@taujs/server --external:@taujs/react",
+    "build": "cross-env NODE_ENV=production tsx build.ts && cross-env NODE_ENV=production BUILD_MODE=ssr tsx build.ts && esbuild src/server/index.ts --bundle --platform=node --format=esm --outfile=dist/server/index.js --external:fastify --external:@taujs/server --external:@taujs/react",
+    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@taujs/react": "0.9.0",
+    "@taujs/server": "0.39.1",
+    "fastify": "5.12.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^5.2.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vite": "8.3.0",
+    "@platformatic/node": "3.69.0"
+  },
+  "main": "watt-entry.ts"
+}
