@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.platformatic.dev/wattpm/3.69.0.json",
+  "entrypoint": "gateway",
+  "applications": [
+    {
+      "id": "web-a",
+      "path": "apps/web-a",
+      "enabled": true,
+      "websocket": true,
+      "env": { "NODE_ENV": "production" }
+    },
+    {
+      "id": "web-b",
+      "path": "apps/web-b",
+      "enabled": true,
+      "websocket": true,
+      "env": { "NODE_ENV": "production" }
+    },
+    { "id": "gateway", "path": "apps/gateway", "enabled": true }
+  ],
+  "server": { "hostname": "127.0.0.1", "port": 3042 },
+  "logger": { "level": "info" }
+}

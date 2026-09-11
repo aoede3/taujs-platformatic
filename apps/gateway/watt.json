@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/gateway/3.69.0.json",
+  "gateway": {
+    "applications": [
+      { "id": "web-a", "proxy": { "prefix": "/a", "rewritePrefix": "/a" } },
+      { "id": "web-b", "proxy": { "prefix": "/b", "rewritePrefix": "/b" } }
+    ]
+  }
+}

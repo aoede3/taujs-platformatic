@@ -1,0 +1,9 @@
+{
+  "name": "gateway",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@platformatic/gateway": "3.69.0"
+  }
+}
