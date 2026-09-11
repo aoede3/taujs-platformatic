@@ -1,6 +1,6 @@
 // MODE B under Watt: the entry creates and owns Fastify; τjs embeds through
 // createServer({ fastify }) and renders only its declared routes. The RFC 0014 section 1
-// mediation recipe is wired verbatim. See https://taujs.dev/reference/platformatic-watt/
+// mediation recipe is wired verbatim. See https://taujs.dev/guides/supervisors-and-gateways/
 import { randomUUID } from 'node:crypto';
 import { join } from 'node:path';
 import type { IncomingMessage } from 'node:http';

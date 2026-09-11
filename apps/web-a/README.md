@@ -8,5 +8,5 @@ on τjs's own server, so there is nothing else to wire.
 runtime root, not this directory. The scaffold's own `src/server/index.ts` is untouched and
 still runs standalone with `npm run dev`.
 
-The settings and the reasoning are on the [Platformatic Watt
-reference](https://taujs.dev/reference/platformatic-watt/).
+The contracts these settings satisfy are in [Running τjs Under a Supervisor or Behind a
+Gateway](https://taujs.dev/guides/supervisors-and-gateways/).
