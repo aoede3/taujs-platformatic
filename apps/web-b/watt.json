@@ -1,0 +1,8 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/node/3.69.0.json",
+  "watch": {
+    "enabled": true,
+    "allow": ["src/**", "taujs.config.ts", "watt-entry.ts"],
+    "ignore": ["dist", "dist/**", "node_modules", "node_modules/**", "**/.vite/**", "src/client/**"]
+  }
+}
