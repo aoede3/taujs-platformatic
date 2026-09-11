@@ -3,9 +3,8 @@
 This repository is the runnable worked example of [Running τjs Under a Supervisor or Behind a
 Gateway](https://taujs.dev/guides/supervisors-and-gateways/) for Platformatic Watt with the
 Gateway. The generic guide states five contracts a supervisor, gateway or ingress must satisfy to
-carry τjs through development; the [Platformatic Watt
-reference](https://taujs.dev/reference/platformatic-watt/) fills them in with the concrete Watt
-settings; this repository is those settings, running.
+carry τjs through development. This repository is those contracts filled in with the concrete
+Watt settings that satisfy them, running.
 
 It is not a τjs integration package. τjs contains no Platformatic dependency and does no
 Platformatic detection - everything here is a consumer of ordinary τjs capabilities
@@ -25,8 +24,8 @@ One Watt runtime, three applications, the Gateway as entrypoint on port 3042.
 Running both modes under one Gateway is the point: it is the arrangement that shows an attached
 HMR channel and a mediated one on the same runtime with no cross-talk between them.
 
-Each application is a `@taujs/create-taujs` React scaffold plus the edits the reference page
-describes: a `watt-entry.ts` exporting `create()` for the supervisor to call, a `watt.json`
+Each application is a `@taujs/create-taujs` React scaffold plus the edits that make it a hosted
+application: a `watt-entry.ts` exporting `create()` for the supervisor to call, a `watt.json`
 carrying the restart-watcher scope, three settings in `taujs.config.ts` (`vite.server.allowedHosts`,
 `server.mountPrefix`/`publicBasePath`, `server.hmrTransport`) and pinned packages. The scaffold's
 own `src/server/index.ts` is untouched and still runs standalone. `NODE_ENV` is supplied by the
@@ -62,7 +61,7 @@ Platformatic (`wattpm`, `@platformatic/node`, `@platformatic/gateway`, `@platfor
 | C8 build/dist restart loop, watcher scope | No loop with the ruled scope; one watched-source edit gives exactly one restart |
 | C9 admission classification | `Origin` dropped and `Host` rewritten through the Gateway, so Vite's token check does not run there; direct refuses missing and invalid tokens |
 
-The cells are those of the reference page's certification, re-run on the pins above. C9 is a
+Each cell holds one of the guide's contracts against this runtime and these pins. C9 is a
 classification rather than a defect: behind a rewriting proxy the requirement is a trusted
 development network, as the [`server.hmrTransport`
 reference](https://taujs.dev/reference/taujs-config/#serverhmrtransport) states.
